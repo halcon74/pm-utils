@@ -59,7 +59,7 @@ xfs_ac() {
 xfs_battery() {
     state_exists xfs_buffer_default || \
 	read_values |savestate xfs_buffer_default
-    write_values "$XFS_AGE_BUFFER" "$XFS_BUFD" "$XFS_SYNCD"
+    write_values "$XFS_AGE_BUFFER" "$XFS_SYNCD" "$XFS_BUFD"
 }
 
 case $1 in
