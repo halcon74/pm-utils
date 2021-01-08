@@ -273,7 +273,7 @@ init_logfile()
 		return 1
 	fi
 	export LOGGING=true
-	exec > "$1" 2>&1
+	exec >> "$1" 2>&1
 }
 
 check_suspend() { [ -n "$SUSPEND_MODULE" ]; }
