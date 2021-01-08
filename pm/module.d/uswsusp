@@ -87,7 +87,11 @@ if [ -z "$HIBERNATE_MODULE" ] && \
 	HIBERNATE_MODULE="uswsusp"
 	do_hibernate()
 	{
-		s2disk
+		if [ -n "$HIBERNATE_MODE" ]; then
+			s2disk -P "shutdown method=$HIBERNATE_MODE"
+		else
+			s2disk
+		fi
 	}
 fi
 
