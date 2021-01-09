@@ -20,6 +20,8 @@ hibernate_cpufreq()
 		grep -q "$TEMPORARY_CPUFREQ_GOVERNOR" \
 			"$x/cpufreq/scaling_available_governors" || continue
 		savestate "${x}_governor" < "$gov"
+		speed="$x/cpufreq/scaling_cur_freq"
+		savestate "${x}_scaling_cur_freq" < "$speed"
 		echo "$TEMPORARY_CPUFREQ_GOVERNOR" > "$gov"
 	done )
 }
@@ -31,7 +33,13 @@ thaw_cpufreq()
 		[ -f "$x" ] || continue
 		state_exists "${x%%/*}_governor" || continue
 		restorestate "${x%%/*}_governor" > "$x"
-	done )
+	done
+	for x in cpu[0-9]*/cpufreq/scaling_setspeed ; do
+		[ -f "$x" ] || continue
+		state_exists "${x%%/*}_scaling_cur_freq" || continue
+		restorestate "${x%%/*}_scaling_cur_freq" > "$x" 2>/dev/null
+	done
+	)
 }
 
 case "$1" in
