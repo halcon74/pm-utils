@@ -65,8 +65,6 @@ laptop_mode_ac() {
     # disable laptop mode, set vm parameters back to sane defaults
     if state_exists laptop_mode_default; then
 	write_values $(restorestate laptop_mode_default)
-    else
-	write_values 0 10 5 500
     fi	
     echo "Laptop mode disabled."
 }
