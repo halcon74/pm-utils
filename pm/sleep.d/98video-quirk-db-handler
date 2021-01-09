@@ -1,6 +1,12 @@
 #!/bin/bash
 # Prototype video quirk database handler that does not rely on HAL.
 
+# only needed on x86, quickly exit on other architectures as this is rather
+# expensive
+ARCH=`uname -m`
+if [ "$ARCH" = "${ARCH%86}" -a "$ARCH" = "${ARCH#x86}" ]; then
+    exit 0;
+fi
 shopt -s extglob
 
 . "${PM_FUNCTIONS}"
