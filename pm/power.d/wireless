@@ -18,7 +18,7 @@ get_wireless_params() {
     # Don't do anything if we cannot find a driver for this iface.
     [ -L "/sys/class/net/$1/device/driver" ] || return 1
     # Skip if not a wireless card.
-    [ -d "/sys/class/net/$1/wireless" ] || return 1
+    [ -d "/sys/class/net/$1/phy80211" ] || return 1
     # Also don't do anything if the device is disabled
     [ "$(cat /sys/class/net/$1/device/enable)" = "1" ] || return 1
     driver="$(readlink "/sys/class/net/$1/device/driver")"
