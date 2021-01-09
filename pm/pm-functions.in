@@ -28,7 +28,7 @@ NX=253
 DX=252
 PM_FUNCTIONS="$PM_UTILS_LIBDIR/functions"
 PM_QUIRKDB="$PM_UTILS_LIBDIR/video-quirks"
-PM_LKW_QUIRKS="$PM_UTILS_ETCDIR/last_known_working.quirkdb"
+PM_LKW_QUIRKS="/var/cache/pm-utils/last_known_working.quirkdb"
 # Use c sort order
 LC_COLLATE=C
 
