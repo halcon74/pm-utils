@@ -29,7 +29,7 @@ if [ -z "$HIBERNATE_MODULE" -a -n "$TUXONICE_LOC" ] && \
 	do_hibernate()
 	{
 	    toi_maybe_chvt
-	    echo 5 > "${TUXONICE_LOC}/powerdown_method"
+	    echo 4 > "${TUXONICE_LOC}/powerdown_method"
 	    echo anything > "${TUXONICE_LOC}/do_hibernate"
 	}
 fi
