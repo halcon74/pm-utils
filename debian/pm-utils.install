@@ -1,2 +1,2 @@
-debian/sleep.d /usr/lib/pm-utils/
+debian/sleep.d/* /usr/lib/pm-utils/sleep.d/
 debian/kernel-postinst/* /etc/kernel/postinst.d/
