@@ -12,7 +12,7 @@ quirks_SCRIPTS =			\
 	20-video-quirk-pm-asus.quirkdb	\
 	20-video-quirk-pm-hp.quirkdb		\
 	20-video-quirk-pm-misc.quirkdb	\
-	20-video-quirk-pm-toshiba.quirkdb	\
+	20-video-quirk-pm-toshiba.quirkdb
 
 EXTRA_DIST=$(quirks_SCRIPTS)
 
