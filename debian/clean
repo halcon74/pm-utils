@@ -1,0 +1,4 @@
+# Enforce that man pages are regenerated
+man/pm-powersave.8
+man/pm-action.8
+man/pm-is-supported.1

@@ -1,0 +1,4 @@
+debian/power.d /usr/lib/pm-utils/
+debian/sleep.d /usr/lib/pm-utils/
+debian/video-quirks /usr/lib/pm-utils/
+debian/kernel-postinst/* /etc/kernel/postinst.d/

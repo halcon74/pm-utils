@@ -1,10 +1,42 @@
 #!/usr/bin/make -f
-  
-include /usr/share/cdbs/1/rules/debhelper.mk
-include /usr/share/cdbs/1/class/autotools.mk
 
-binary-install/pm-utils::
-	# be nice, don't overwrite on_ac_power.
-	# It is provided in powermgmt-base
+%:
+	dh $@
+
+override_dh_auto_build:
+	# Hack to not build arch specific binaries (replaced with Perl code in
+	# 25-pmu.patch)
+	touch src/pm-pmu.o src/pm-reset-swap.o
+	touch src/pm-pmu src/pm-reset-swap
+	dh_auto_build
+
+override_dh_install:
+	dh_install
+	# We depend on powermgmt-base to provide on_ac_power.
+	# This way we don't have to conflict with this package.
 	rm -f debian/pm-utils/usr/bin/on_ac_power
+	rm -f debian/pm-utils/usr/bin/import-fdi-quirkdb
 	rm -f debian/pm-utils/usr/share/man/man1/on_ac_power.1
+	# Remove tools/hooks that are not suitable for Debian.
+	rm -f debian/pm-utils/usr/lib/pm-utils/sleep.d/01grub
+	rm -f debian/pm-utils/usr/lib/pm-utils/sleep.d/49bluetooth
+	rm -f debian/pm-utils/usr/lib/pm-utils/sleep.d/55NetworkManager
+	rm -f debian/pm-utils/usr/lib/pm-utils/bin/pm-reset-swap
+	rm -f debian/pm-utils/usr/lib/pm-utils/bin/pm-pmu
+	rm -f debian/pm-utils/usr/share/man/man8/pm-pmu.8
+	# Remove hooks which are not stable enough yet
+	rm -f debian/pm-utils//usr/lib/pm-utils/power.d/harddrive
+	# Remove hooks which have shown to not reduce, or even increase power
+	# usage
+	rm -f debian/pm-utils/usr/lib/pm-utils/power.d/journal-commit
+	rm -f debian/pm-utils/usr/lib/pm-utils/power.d/readahead
+
+	chmod -x debian/pm-utils/usr/lib/pm-utils/defaults
+
+override_dh_link:
+	dh_link
+	# https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=812545
+	# revert the sbin binaries symlinks
+	ln -sf /usr/lib/pm-utils/bin/pm-action debian/pm-utils/usr/sbin/pm-suspend
+	ln -sf /usr/lib/pm-utils/bin/pm-action debian/pm-utils/usr/sbin/pm-hibernate
+	ln -sf /usr/lib/pm-utils/bin/pm-action debian/pm-utils/usr/sbin/pm-suspend-hybrid
