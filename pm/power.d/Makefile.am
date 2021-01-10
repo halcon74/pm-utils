@@ -2,14 +2,11 @@ powerdir = $(libdir)/pm-utils/power.d
 
 power_SCRIPTS =			\
 	disable_wol	\
-	hal-cd-polling	\
 	harddrive		\
 	intel-audio-powersave	\
-	journal-commit		\
 	laptop-mode	\
 	pci_devices	\
 	pcie_aspm	\
-	readahead	\
 	sata_alpm	\
 	sched-powersave	\
 	usb_bluetooth	\

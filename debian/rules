@@ -24,10 +24,6 @@ override_dh_install:
 	rm -f debian/pm-utils/usr/share/man/man8/pm-pmu.8
 	# Remove hooks which are not stable enough yet
 	rm -f debian/pm-utils//usr/lib/pm-utils/power.d/harddrive
-	# Remove hooks which have shown to not reduce, or even increase power
-	# usage
-	rm -f debian/pm-utils/usr/lib/pm-utils/power.d/journal-commit
-	rm -f debian/pm-utils/usr/lib/pm-utils/power.d/readahead
 
 	chmod -x debian/pm-utils/usr/lib/pm-utils/defaults
 
