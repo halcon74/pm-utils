@@ -1,4 +1,4 @@
-SUBDIRS = pm man src
+SUBDIRS = pm logrotate man src
 
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = pm-utils.pc

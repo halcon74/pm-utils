@@ -1,18 +1,21 @@
 powerdir = $(libdir)/pm-utils/power.d
 
 power_SCRIPTS =			\
-	sched-powersave		\
+	disable_wol	\
+	hal-cd-polling	\
 	harddrive		\
-	laptop-mode		\
-	xfs_buffer		\
-	readahead		\
 	intel-audio-powersave	\
-	wireless 		\
 	journal-commit		\
-	disable_wol		\
-	pcie_aspm		\
-	sata_alpm		\
-	hal-cd-polling
+	laptop-mode	\
+	pci_devices	\
+	pcie_aspm	\
+	readahead	\
+	sata_alpm	\
+	sched-powersave	\
+	usb_bluetooth	\
+	wireless 		\
+	xfs_buffer	
+
 
 EXTRA_DIST=$(power_SCRIPTS)
 
