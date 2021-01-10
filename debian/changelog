@@ -1,4 +1,4 @@
-pm-utils (1.4.3-1) unstable; urgency=low
+pm-utils (1.4.4-1) unstable; urgency=low
 
   * Bugfix release, a new version from a new fork (Closes: #nnnn)
 

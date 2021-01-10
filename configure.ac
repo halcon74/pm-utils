@@ -1,5 +1,5 @@
 AC_PREREQ(2.52)
-AC_INIT(pm-utils, 1.4.3)
+AC_INIT(pm-utils, 1.4.4)
 AC_CONFIG_SRCDIR(src)
 AM_INIT_AUTOMAKE(AC_PACKAGE_NAME, AC_PACKAGE_VERSION)
 AM_CONFIG_HEADER(config.h)
@@ -39,11 +39,12 @@ Makefile
 pm-utils.pc
 logrotate/Makefile
 man/Makefile
-src/Makefile
 pm/Makefile
 pm/sleep.d/Makefile
 pm/power.d/Makefile
 pm/module.d/Makefile
+src/Makefile
+video-quirks/Makefile
 ])
 
 dnl ==========================================================================

@@ -1,4 +1,4 @@
-SUBDIRS = pm logrotate man src
+SUBDIRS = logrotate man pm src video-quirks
 
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = pm-utils.pc
