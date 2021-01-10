@@ -37,6 +37,7 @@ dnl ---------------------------------------------------------------------------
 AC_OUTPUT([
 Makefile
 pm-utils.pc
+logrotate/Makefile
 man/Makefile
 src/Makefile
 pm/Makefile
