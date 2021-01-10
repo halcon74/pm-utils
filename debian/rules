@@ -19,8 +19,6 @@ override_dh_install:
 	rm -f debian/pm-utils/usr/share/man/man1/on_ac_power.1
 	# Remove tools/hooks that are not suitable for Debian.
 	rm -f debian/pm-utils/usr/lib/pm-utils/sleep.d/01grub
-	rm -f debian/pm-utils/usr/lib/pm-utils/sleep.d/49bluetooth
-	rm -f debian/pm-utils/usr/lib/pm-utils/sleep.d/55NetworkManager
 	rm -f debian/pm-utils/usr/lib/pm-utils/bin/pm-reset-swap
 	rm -f debian/pm-utils/usr/lib/pm-utils/bin/pm-pmu
 	rm -f debian/pm-utils/usr/share/man/man8/pm-pmu.8
