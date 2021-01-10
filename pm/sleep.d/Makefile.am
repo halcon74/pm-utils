@@ -4,9 +4,7 @@ sleep_SCRIPTS =			\
 	00logging		\
 	00powersave		\
 	01grub			\
-	49bluetooth		\
 	50unload_alx		\
-	55NetworkManager	\
 	75modules		\
 	90clock			\
 	94cpufreq		\
