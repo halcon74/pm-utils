@@ -320,7 +320,7 @@ if [ -z "$HIBERNATE_MODULE" ] && \
 		echo "${HIBERNATE_MODE}" > /sys/power/disk
 		echo "disk" > /sys/power/state
 		RET=$?
-		echo -n "$HIBERNATE_MODE_SAVE" > /sys/power/disk
+		echo "$HIBERNATE_MODE_SAVE" > /sys/power/disk
 		return "$RET"
 	}
 fi
