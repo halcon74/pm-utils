@@ -9,7 +9,7 @@ Homepage: https://github.com/halcon74/pm-utils
 #Vcs-Git: https://salsa.debian.org/debian/hello-world.git
 
 Package: pm-utils
-Architecture: all
+Architecture: any
 Depends: ${misc:Depends}, powermgmt-base
 Recommends: vbetool, procps, hdparm, ethtool, kbd | console-tools
 Suggests: cpufrequtils, wireless-tools, radeontool

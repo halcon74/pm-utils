@@ -3,7 +3,15 @@ pm-utils (1.4.4-1) unstable; urgency=low
   * Bugfix release, a new version from a new fork (Closes: #nnnn)
 
  -- Alexey Mishustin <halcon@tuta.io>  Sun, 10 Jan 2021 02:47:42 +0300
- 
+pm-utils (1.4.1-19) unstable; urgency=medium
+
+  * No-change upload to make myself the maintainer.  I intend to perhaps
+    share this with the DEIDT (Debian Ecosystem Init Diversity Team), but
+    since it's O: right now and has an RC bug open, I want to get going.
+    Closes:#852167.
+
+ -- Ian Jackson <ijackson@chiark.greenend.org.uk>  Thu, 14 Nov 2019 15:08:18 +0000
+
 pm-utils (1.4.1-18) unstable; urgency=medium
 
   * QA upload.

@@ -1,7 +1,22 @@
 #!/usr/bin/make -f
 
+DEB_AUTOMAKE_ARGS += ' --no-multiarch'
+DEB_CONFIGURE_EXTRA_FLAGS += '--libdir=$${prefix}/lib'
+
 %:
-	dh $@
+	dh $@ --with autoreconf
+
+override_dh_auto_configure:
+	dh_auto_configure -- --build=x86_64-linux-gnu \
+	--prefix=/usr \
+	--includedir=\$${prefix}/include \
+	--mandir=\$${prefix}/share/man \
+	--infodir=\$${prefix}/share/info \
+	--sysconfdir=/etc \
+	--localstatedir=/var \
+	--disable-silent-rules \
+	--libexecdir=\$${prefix}/lib/pm-utils \
+	--libdir=\$${prefix}/lib
 
 override_dh_auto_build:
 	# Hack to not build arch specific binaries (replaced with Perl code in
@@ -23,7 +38,7 @@ override_dh_install:
 	rm -f debian/pm-utils/usr/lib/pm-utils/bin/pm-pmu
 	rm -f debian/pm-utils/usr/share/man/man8/pm-pmu.8
 	# Remove hooks which are not stable enough yet
-	rm -f debian/pm-utils//usr/lib/pm-utils/power.d/harddrive
+	rm -f debian/pm-utils/usr/lib/pm-utils/power.d/harddrive
 
 	chmod -x debian/pm-utils/usr/lib/pm-utils/defaults
 
