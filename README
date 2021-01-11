@@ -4,7 +4,7 @@ Included all the patches present in ::gentoo before last-riting in January 2021.
 Included non-specific Debian patches.  
 Included a patch from c2p-overlay.  
 Included all the additional files from Gentoo/Debian (the same).  
-Deleted obsolete files which was being removed by Gentoo ebuild / Debian rules.  
+Deleted obsolete files which were being removed by Gentoo ebuild / Debian rules.  
 Included pm-quirks.  
 Fixed Gentoo bugs 489650, 443530, 703026 and Debian bugs 485443, 659260.  
 
