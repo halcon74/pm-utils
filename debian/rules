@@ -1,20 +1,10 @@
 #!/usr/bin/make -f
 
-DEB_AUTOMAKE_ARGS += ' --no-multiarch'
-DEB_CONFIGURE_EXTRA_FLAGS += '--libdir=$${prefix}/lib'
-
 %:
 	dh $@ --with autoreconf
 
 override_dh_auto_configure:
-	dh_auto_configure -- --build=x86_64-linux-gnu \
-	--prefix=/usr \
-	--includedir=\$${prefix}/include \
-	--mandir=\$${prefix}/share/man \
-	--infodir=\$${prefix}/share/info \
-	--sysconfdir=/etc \
-	--localstatedir=/var \
-	--disable-silent-rules \
+	dh_auto_configure -- --prefix=/usr \
 	--libexecdir=\$${prefix}/lib/pm-utils \
 	--libdir=\$${prefix}/lib
 

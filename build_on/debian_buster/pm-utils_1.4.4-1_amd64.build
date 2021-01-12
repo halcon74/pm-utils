@@ -25,17 +25,10 @@ configure.ac:4: installing './missing'
 src/Makefile.am: installing './depcomp'
    debian/rules override_dh_auto_configure
 make[1]: Entering directory '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4'
-dh_auto_configure -- --build=x86_64-linux-gnu \
---prefix=/usr \
---includedir=\${prefix}/include \
---mandir=\${prefix}/share/man \
---infodir=\${prefix}/share/info \
---sysconfdir=/etc \
---localstatedir=/var \
---disable-silent-rules \
+dh_auto_configure -- --prefix=/usr \
 --libexecdir=\${prefix}/lib/pm-utils \
 --libdir=\${prefix}/lib
-	./configure --build=x86_64-linux-gnu --prefix=/usr --includedir=\${prefix}/include --mandir=\${prefix}/share/man --infodir=\${prefix}/share/info --sysconfdir=/etc --localstatedir=/var --disable-silent-rules --libdir=\${prefix}/lib/x86_64-linux-gnu --runstatedir=/run --disable-maintainer-mode --disable-dependency-tracking --build=x86_64-linux-gnu --prefix=/usr --includedir=\${prefix}/include --mandir=\${prefix}/share/man --infodir=\${prefix}/share/info --sysconfdir=/etc --localstatedir=/var --disable-silent-rules --libexecdir=\${prefix}/lib/pm-utils --libdir=\${prefix}/lib
+	./configure --build=x86_64-linux-gnu --prefix=/usr --includedir=\${prefix}/include --mandir=\${prefix}/share/man --infodir=\${prefix}/share/info --sysconfdir=/etc --localstatedir=/var --disable-silent-rules --libdir=\${prefix}/lib/x86_64-linux-gnu --runstatedir=/run --disable-maintainer-mode --disable-dependency-tracking --prefix=/usr --libexecdir=\${prefix}/lib/pm-utils --libdir=\${prefix}/lib
 configure: WARNING: unrecognized options: --disable-maintainer-mode
 checking for a BSD-compatible install... /usr/bin/install -c
 checking whether build environment is sane... yes
@@ -104,22 +97,6 @@ make[4]: Entering directory '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-ut
 /usr/bin/xmlto man pm-is-supported.xml
 /usr/bin/xmlto man pm-pmu.xml
 /usr/bin/xmlto man pm-powersave.xml
-Note: meta source : no *info/productname or alternative            pm-pmu
-Note: meta source : see http://docbook.sf.net/el/productname       pm-pmu
-Note: meta source : no refentry/refmeta/refmiscinfo@class=source   pm-pmu
-Note: meta source : see http://docbook.sf.net/el/refmiscinfo       pm-pmu
-Note: meta version: no *info/productnumber or alternative          pm-pmu
-Note: meta version: see http://docbook.sf.net/el/productnumber     pm-pmu
-Note: meta version: no refentry/refmeta/refmiscinfo@class=version  pm-pmu
-Note: meta version: see http://docbook.sf.net/el/refmiscinfo       pm-pmu
-Warn: meta source : no fallback for source, so inserted a fixme    pm-pmu
-Note: meta manual : no titled ancestor of refentry                 pm-pmu
-Note: meta manual : no refentry/refmeta/refmiscinfo@class=manual   pm-pmu
-Note: meta manual : see http://docbook.sf.net/el/refmiscinfo       pm-pmu
-Warn: meta manual : no fallback for manual, so inserted a fixme    pm-pmu
-Warn: AUTHOR sect.: no personblurb|contrib for Richard Hughes      pm-pmu
-Note: AUTHOR sect.: see http://docbook.sf.net/el/contrib           pm-pmu
-Note: AUTHOR sect.: see http://docbook.sf.net/el/personblurb       pm-pmu
 Note: meta source : no *info/productname or alternative            on_ac_power
 Note: meta source : see http://docbook.sf.net/el/productname       on_ac_power
 Note: meta source : no refentry/refmeta/refmiscinfo@class=source   on_ac_power
@@ -136,11 +113,27 @@ Warn: meta manual : no fallback for manual, so inserted a fixme    on_ac_power
 Warn: AUTHOR sect.: no personblurb|contrib for Richard Hughes      on_ac_power
 Note: AUTHOR sect.: see http://docbook.sf.net/el/contrib           on_ac_power
 Note: AUTHOR sect.: see http://docbook.sf.net/el/personblurb       on_ac_power
-Note: Writing pm-pmu.8
-Note: Writing pm-is-supported.1
+Note: meta source : no *info/productname or alternative            pm-pmu
+Note: meta source : see http://docbook.sf.net/el/productname       pm-pmu
+Note: meta source : no refentry/refmeta/refmiscinfo@class=source   pm-pmu
+Note: meta source : see http://docbook.sf.net/el/refmiscinfo       pm-pmu
+Note: meta version: no *info/productnumber or alternative          pm-pmu
+Note: meta version: see http://docbook.sf.net/el/productnumber     pm-pmu
+Note: meta version: no refentry/refmeta/refmiscinfo@class=version  pm-pmu
+Note: meta version: see http://docbook.sf.net/el/refmiscinfo       pm-pmu
+Warn: meta source : no fallback for source, so inserted a fixme    pm-pmu
+Note: meta manual : no titled ancestor of refentry                 pm-pmu
+Note: meta manual : no refentry/refmeta/refmiscinfo@class=manual   pm-pmu
+Note: meta manual : see http://docbook.sf.net/el/refmiscinfo       pm-pmu
+Warn: meta manual : no fallback for manual, so inserted a fixme    pm-pmu
+Warn: AUTHOR sect.: no personblurb|contrib for Richard Hughes      pm-pmu
+Note: AUTHOR sect.: see http://docbook.sf.net/el/contrib           pm-pmu
+Note: AUTHOR sect.: see http://docbook.sf.net/el/personblurb       pm-pmu
 Note: Writing on_ac_power.1
-/usr/bin/xmlto man pm-action.xml
+Note: Writing pm-is-supported.1
+Note: Writing pm-pmu.8
 Note: Writing pm-powersave.8
+/usr/bin/xmlto man pm-action.xml
 Note: Writing pm-action.8
 make[4]: Leaving directory '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/man'
 Making all in pm
@@ -292,9 +285,9 @@ mkdir /home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-uti
  /usr/bin/mkdir -p '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/share/doc/pm-utils'
  /usr/bin/mkdir -p '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/lib/pm-utils'
  /usr/bin/mkdir -p '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/lib/pm-utils'
+ /usr/bin/install -c -m 644 defaults '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/lib/pm-utils'
  /usr/bin/install -c -m 644 HOWTO.hooks HOWTO.modules '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/share/doc/pm-utils'
  /usr/bin/install -c functions pm-functions '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/lib/pm-utils'
- /usr/bin/install -c -m 644 defaults '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/lib/pm-utils'
 make[4]: Leaving directory '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/pm'
 make[3]: Leaving directory '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/pm'
 make[2]: Leaving directory '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/pm'
@@ -302,18 +295,18 @@ Making install in src
 make[2]: Entering directory '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/src'
 make[3]: Entering directory '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/src'
  /usr/bin/mkdir -p '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/bin'
- /usr/bin/mkdir -p '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/sbin'
  /usr/bin/mkdir -p '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/bin'
+ /usr/bin/mkdir -p '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/sbin'
  /usr/bin/mkdir -p '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/lib/pm-utils/bin'
- /usr/bin/install -c on_ac_power '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/bin'
- /usr/bin/install -c pm-is-supported '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/bin'
   /usr/bin/install -c pm-pmu pm-reset-swap '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/lib/pm-utils/bin'
- /usr/bin/install -c pm-powersave '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/sbin'
+ /usr/bin/install -c on_ac_power '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/bin'
  /usr/bin/mkdir -p '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/lib/pm-utils/bin'
  /usr/bin/install -c pm-action service '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/lib/pm-utils/bin'
 make  install-data-hook
+ /usr/bin/install -c pm-is-supported '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/bin'
 make[4]: Entering directory '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/src'
 mkdir -p /home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/sbin
+ /usr/bin/install -c pm-powersave '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/sbin'
 ln -s /usr/lib/pm-utils/bin/pm-action /home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/sbin/pm-suspend
 ln -s /usr/lib/pm-utils/bin/pm-action /home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/sbin/pm-hibernate
 ln -s /usr/lib/pm-utils/bin/pm-action /home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/sbin/pm-suspend-hybrid
@@ -394,17 +387,17 @@ W: pm-utils source: patch-file-present-but-not-mentioned-in-series 25-pmu.patch
 W: pm-utils source: patch-file-present-but-not-mentioned-in-series 80-service.patch
 W: pm-utils: wrong-bug-number-in-closes l3:#nnnn
 W: pm-utils: pkg-config-unavailable-for-cross-compilation usr/lib/pkgconfig/pm-utils.pc
-W: pm-utils: executable-not-elf-or-script usr/lib/pm-utils/video-quirks/20-video-quirk-pm-samsung.quirkdb
-W: pm-utils: executable-not-elf-or-script usr/lib/pm-utils/video-quirks/20-video-quirk-pm-fujitsu.quirkdb
-W: pm-utils: executable-not-elf-or-script usr/lib/pm-utils/video-quirks/20-video-quirk-pm-apple.quirkdb
-W: pm-utils: executable-not-elf-or-script usr/lib/pm-utils/video-quirks/20-video-quirk-pm-asus.quirkdb
-W: pm-utils: executable-not-elf-or-script usr/lib/pm-utils/video-quirks/20-video-quirk-pm-lenovo.quirkdb
-W: pm-utils: executable-not-elf-or-script usr/lib/pm-utils/video-quirks/20-video-quirk-pm-acer.quirkdb
-W: pm-utils: executable-not-elf-or-script usr/lib/pm-utils/video-quirks/20-video-quirk-pm-ibm.quirkdb
-W: pm-utils: executable-not-elf-or-script usr/lib/pm-utils/video-quirks/20-video-quirk-pm-misc.quirkdb
-W: pm-utils: executable-not-elf-or-script usr/lib/pm-utils/video-quirks/20-video-quirk-pm-hp.quirkdb
 W: pm-utils: executable-not-elf-or-script usr/lib/pm-utils/video-quirks/20-video-quirk-pm-dell.quirkdb
+W: pm-utils: executable-not-elf-or-script usr/lib/pm-utils/video-quirks/20-video-quirk-pm-lenovo.quirkdb
+W: pm-utils: executable-not-elf-or-script usr/lib/pm-utils/video-quirks/20-video-quirk-pm-asus.quirkdb
+W: pm-utils: executable-not-elf-or-script usr/lib/pm-utils/video-quirks/20-video-quirk-pm-hp.quirkdb
+W: pm-utils: executable-not-elf-or-script usr/lib/pm-utils/video-quirks/20-video-quirk-pm-acer.quirkdb
+W: pm-utils: executable-not-elf-or-script usr/lib/pm-utils/video-quirks/20-video-quirk-pm-misc.quirkdb
 W: pm-utils: executable-not-elf-or-script usr/lib/pm-utils/video-quirks/20-video-quirk-pm-sony.quirkdb
+W: pm-utils: executable-not-elf-or-script usr/lib/pm-utils/video-quirks/20-video-quirk-pm-ibm.quirkdb
+W: pm-utils: executable-not-elf-or-script usr/lib/pm-utils/video-quirks/20-video-quirk-pm-fujitsu.quirkdb
+W: pm-utils: executable-not-elf-or-script usr/lib/pm-utils/video-quirks/20-video-quirk-pm-samsung.quirkdb
 W: pm-utils: executable-not-elf-or-script usr/lib/pm-utils/video-quirks/20-video-quirk-pm-toshiba.quirkdb
+W: pm-utils: executable-not-elf-or-script usr/lib/pm-utils/video-quirks/20-video-quirk-pm-apple.quirkdb
 N: 3 tags overridden (3 warnings)
 Finished running lintian.
