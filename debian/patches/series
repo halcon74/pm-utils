@@ -1,0 +1,3 @@
+debian/11-handle-on_ac_power-255-return-code.patch
+debian/25-pmu.patch
+debian/80-service.patch

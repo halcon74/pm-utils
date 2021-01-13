@@ -5,12 +5,17 @@ dpkg-buildpackage: info: source distribution unstable
 dpkg-buildpackage: info: source changed by Alexey Mishustin <halcon@tuta.io>
  dpkg-source --before-build .
 dpkg-buildpackage: info: host architecture amd64
+dpkg-source: info: using patch list from debian/patches/series
+dpkg-source: info: applying debian/11-handle-on_ac_power-255-return-code.patch
+dpkg-source: info: applying debian/25-pmu.patch
+dpkg-source: info: applying debian/80-service.patch
  fakeroot debian/rules clean
 dh clean --with autoreconf
    dh_clean
  dpkg-source -b .
 dpkg-source: info: using source format '3.0 (quilt)'
 dpkg-source: info: building pm-utils using existing ./pm-utils_1.4.4.orig.tar.gz
+dpkg-source: info: using patch list from debian/patches/series
 dpkg-source: info: building pm-utils in pm-utils_1.4.4-1.debian.tar.xz
 dpkg-source: info: building pm-utils in pm-utils_1.4.4-1.dsc
  debian/rules build
@@ -56,7 +61,6 @@ checking that generated files are newer than configure... done
 configure: creating ./config.status
 config.status: creating Makefile
 config.status: creating pm-utils.pc
-config.status: creating logrotate/Makefile
 config.status: creating man/Makefile
 config.status: creating pm/Makefile
 config.status: creating pm/sleep.d/Makefile
@@ -87,10 +91,6 @@ dh_auto_build
 make[2]: Entering directory '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4'
 make  all-recursive
 make[3]: Entering directory '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4'
-Making all in logrotate
-make[4]: Entering directory '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/logrotate'
-make[4]: Nothing to be done for 'all'.
-make[4]: Leaving directory '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/logrotate'
 Making all in man
 make[4]: Entering directory '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/man'
 /usr/bin/xmlto man on_ac_power.xml
@@ -130,8 +130,8 @@ Warn: AUTHOR sect.: no personblurb|contrib for Richard Hughes      pm-pmu
 Note: AUTHOR sect.: see http://docbook.sf.net/el/contrib           pm-pmu
 Note: AUTHOR sect.: see http://docbook.sf.net/el/personblurb       pm-pmu
 Note: Writing on_ac_power.1
-Note: Writing pm-is-supported.1
 Note: Writing pm-pmu.8
+Note: Writing pm-is-supported.1
 Note: Writing pm-powersave.8
 /usr/bin/xmlto man pm-action.xml
 Note: Writing pm-action.8
@@ -174,14 +174,13 @@ make[4]: Entering directory '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-ut
 make[4]: Leaving directory '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4'
 make[3]: Leaving directory '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4'
 make[2]: Leaving directory '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4'
+make ChangeLog
+make[2]: Entering directory '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4'
+make[2]: Leaving directory '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4'
 make[1]: Leaving directory '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4'
    dh_auto_test
 	make -j4 check VERBOSE=1
 make[1]: Entering directory '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4'
-Making check in logrotate
-make[2]: Entering directory '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/logrotate'
-make[2]: Nothing to be done for 'check'.
-make[2]: Leaving directory '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/logrotate'
 Making check in man
 make[2]: Entering directory '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/man'
 make[2]: Nothing to be done for 'check'.
@@ -224,15 +223,6 @@ dh binary --with autoreconf
    dh_auto_install
 	make -j4 install DESTDIR=/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils AM_UPDATE_INFO_DIR=no
 make[1]: Entering directory '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4'
-Making install in logrotate
-make[2]: Entering directory '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/logrotate'
-make[3]: Entering directory '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/logrotate'
-mkdir /home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/etc/pm/config.d
-make[3]: Nothing to be done for 'install-data-am'.
-mkdir: cannot create directory ‘/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/etc/pm/config.d’: No such file or directory
-make[3]: [Makefile:396: install-exec-local] Error 1 (ignored)
-make[3]: Leaving directory '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/logrotate'
-make[2]: Leaving directory '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/logrotate'
 Making install in man
 make[2]: Entering directory '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/man'
 make[3]: Entering directory '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/man'
@@ -245,8 +235,8 @@ make  install-data-hook
 make[4]: Entering directory '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/man'
  /usr/bin/mkdir -p '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/share/man/man1'
  /usr/bin/mkdir -p '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/share/man/man8'
- /usr/bin/install -c -m 644 pm-pmu.8 pm-powersave.8 pm-action.8 '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/share/man/man8'
  /usr/bin/install -c -m 644 on_ac_power.1 pm-is-supported.1 '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/share/man/man1'
+ /usr/bin/install -c -m 644 pm-pmu.8 pm-powersave.8 pm-action.8 '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/share/man/man8'
 ln -s pm-action.8 /home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/share/man/man8/pm-suspend.8
 ln -s pm-action.8 /home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/share/man/man8/pm-hibernate.8
 ln -s pm-action.8 /home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/share/man/man8/pm-suspend-hybrid.8
@@ -285,9 +275,9 @@ mkdir /home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-uti
  /usr/bin/mkdir -p '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/share/doc/pm-utils'
  /usr/bin/mkdir -p '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/lib/pm-utils'
  /usr/bin/mkdir -p '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/lib/pm-utils'
- /usr/bin/install -c -m 644 defaults '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/lib/pm-utils'
  /usr/bin/install -c -m 644 HOWTO.hooks HOWTO.modules '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/share/doc/pm-utils'
  /usr/bin/install -c functions pm-functions '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/lib/pm-utils'
+ /usr/bin/install -c -m 644 defaults '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/lib/pm-utils'
 make[4]: Leaving directory '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/pm'
 make[3]: Leaving directory '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/pm'
 make[2]: Leaving directory '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/pm'
@@ -296,17 +286,17 @@ make[2]: Entering directory '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-ut
 make[3]: Entering directory '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/src'
  /usr/bin/mkdir -p '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/bin'
  /usr/bin/mkdir -p '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/bin'
+ /usr/bin/install -c pm-is-supported '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/bin'
+ /usr/bin/install -c on_ac_power '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/bin'
  /usr/bin/mkdir -p '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/sbin'
  /usr/bin/mkdir -p '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/lib/pm-utils/bin'
-  /usr/bin/install -c pm-pmu pm-reset-swap '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/lib/pm-utils/bin'
- /usr/bin/install -c on_ac_power '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/bin'
  /usr/bin/mkdir -p '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/lib/pm-utils/bin'
+ /usr/bin/install -c pm-powersave '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/sbin'
  /usr/bin/install -c pm-action service '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/lib/pm-utils/bin'
+  /usr/bin/install -c pm-pmu pm-reset-swap '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/lib/pm-utils/bin'
 make  install-data-hook
- /usr/bin/install -c pm-is-supported '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/bin'
 make[4]: Entering directory '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/src'
 mkdir -p /home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/sbin
- /usr/bin/install -c pm-powersave '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/sbin'
 ln -s /usr/lib/pm-utils/bin/pm-action /home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/sbin/pm-suspend
 ln -s /usr/lib/pm-utils/bin/pm-action /home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/sbin/pm-hibernate
 ln -s /usr/lib/pm-utils/bin/pm-action /home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4/debian/pm-utils/usr/sbin/pm-suspend-hybrid
@@ -334,6 +324,7 @@ make[1]: Leaving directory '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-uti
    debian/rules override_dh_install
 make[1]: Entering directory '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4'
 dh_install
+dh_installlogrotate
 # We depend on powermgmt-base to provide on_ac_power.
 # This way we don't have to conflict with this package.
 rm -f debian/pm-utils/usr/bin/on_ac_power
@@ -347,10 +338,12 @@ rm -f debian/pm-utils/usr/share/man/man8/pm-pmu.8
 # Remove hooks which are not stable enough yet
 rm -f debian/pm-utils/usr/lib/pm-utils/power.d/harddrive
 chmod -x debian/pm-utils/usr/lib/pm-utils/defaults
+find ./debian/pm-utils/etc -type d -name "video-quirks" -delete
 make[1]: Leaving directory '/home/halcon/Desktop/Packaging/pm-utils-1.4.4/pm-utils-1.4.4'
    dh_installdocs
    dh_installchangelogs
    dh_installman
+   dh_installlogrotate
    dh_lintian
    dh_perl
    debian/rules override_dh_link
@@ -379,25 +372,24 @@ dpkg-deb: building package 'pm-utils' in '../pm-utils_1.4.4-1_amd64.deb'.
  dpkg-genchanges  >../pm-utils_1.4.4-1_amd64.changes
 dpkg-genchanges: info: including full source code in upload
  dpkg-source --after-build .
+dpkg-source: info: unapplying debian/80-service.patch
+dpkg-source: info: unapplying debian/25-pmu.patch
+dpkg-source: info: unapplying debian/11-handle-on_ac_power-255-return-code.patch
 dpkg-buildpackage: info: full upload (original source is included)
 Now running lintian pm-utils_1.4.4-1_amd64.changes ...
-W: pm-utils source: package-needs-versioned-debhelper-build-depends 13
-W: pm-utils source: patch-file-present-but-not-mentioned-in-series 11-handle-on_ac_power-255-return-code.patch
-W: pm-utils source: patch-file-present-but-not-mentioned-in-series 25-pmu.patch
-W: pm-utils source: patch-file-present-but-not-mentioned-in-series 80-service.patch
 W: pm-utils: wrong-bug-number-in-closes l3:#nnnn
 W: pm-utils: pkg-config-unavailable-for-cross-compilation usr/lib/pkgconfig/pm-utils.pc
+W: pm-utils: executable-not-elf-or-script usr/lib/pm-utils/video-quirks/20-video-quirk-pm-misc.quirkdb
+W: pm-utils: executable-not-elf-or-script usr/lib/pm-utils/video-quirks/20-video-quirk-pm-hp.quirkdb
 W: pm-utils: executable-not-elf-or-script usr/lib/pm-utils/video-quirks/20-video-quirk-pm-dell.quirkdb
+W: pm-utils: executable-not-elf-or-script usr/lib/pm-utils/video-quirks/20-video-quirk-pm-acer.quirkdb
+W: pm-utils: executable-not-elf-or-script usr/lib/pm-utils/video-quirks/20-video-quirk-pm-sony.quirkdb
+W: pm-utils: executable-not-elf-or-script usr/lib/pm-utils/video-quirks/20-video-quirk-pm-apple.quirkdb
+W: pm-utils: executable-not-elf-or-script usr/lib/pm-utils/video-quirks/20-video-quirk-pm-ibm.quirkdb
+W: pm-utils: executable-not-elf-or-script usr/lib/pm-utils/video-quirks/20-video-quirk-pm-toshiba.quirkdb
+W: pm-utils: executable-not-elf-or-script usr/lib/pm-utils/video-quirks/20-video-quirk-pm-samsung.quirkdb
 W: pm-utils: executable-not-elf-or-script usr/lib/pm-utils/video-quirks/20-video-quirk-pm-lenovo.quirkdb
 W: pm-utils: executable-not-elf-or-script usr/lib/pm-utils/video-quirks/20-video-quirk-pm-asus.quirkdb
-W: pm-utils: executable-not-elf-or-script usr/lib/pm-utils/video-quirks/20-video-quirk-pm-hp.quirkdb
-W: pm-utils: executable-not-elf-or-script usr/lib/pm-utils/video-quirks/20-video-quirk-pm-acer.quirkdb
-W: pm-utils: executable-not-elf-or-script usr/lib/pm-utils/video-quirks/20-video-quirk-pm-misc.quirkdb
-W: pm-utils: executable-not-elf-or-script usr/lib/pm-utils/video-quirks/20-video-quirk-pm-sony.quirkdb
-W: pm-utils: executable-not-elf-or-script usr/lib/pm-utils/video-quirks/20-video-quirk-pm-ibm.quirkdb
 W: pm-utils: executable-not-elf-or-script usr/lib/pm-utils/video-quirks/20-video-quirk-pm-fujitsu.quirkdb
-W: pm-utils: executable-not-elf-or-script usr/lib/pm-utils/video-quirks/20-video-quirk-pm-samsung.quirkdb
-W: pm-utils: executable-not-elf-or-script usr/lib/pm-utils/video-quirks/20-video-quirk-pm-toshiba.quirkdb
-W: pm-utils: executable-not-elf-or-script usr/lib/pm-utils/video-quirks/20-video-quirk-pm-apple.quirkdb
 N: 3 tags overridden (3 warnings)
 Finished running lintian.

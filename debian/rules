@@ -14,9 +14,13 @@ override_dh_auto_build:
 	touch src/pm-pmu.o src/pm-reset-swap.o
 	touch src/pm-pmu src/pm-reset-swap
 	dh_auto_build
+	make ChangeLog
 
 override_dh_install:
 	dh_install
+
+	dh_installlogrotate
+
 	# We depend on powermgmt-base to provide on_ac_power.
 	# This way we don't have to conflict with this package.
 	rm -f debian/pm-utils/usr/bin/on_ac_power
@@ -31,6 +35,8 @@ override_dh_install:
 	rm -f debian/pm-utils/usr/lib/pm-utils/power.d/harddrive
 
 	chmod -x debian/pm-utils/usr/lib/pm-utils/defaults
+
+	find ./debian/pm-utils/etc -type d -name "video-quirks" -delete
 
 override_dh_link:
 	dh_link

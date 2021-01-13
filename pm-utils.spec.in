@@ -81,8 +81,6 @@ rm -rf "$RPM_BUILD_ROOT"
 %dir %{_datadir}/doc/pm-utils
 %doc %{_datadir}/doc/pm-utils/*
 
-# no logrotate needed, because only one run of pm-utils is stored
-# in the logfile
 %ghost %verify(not md5 size mtime) %{_localstatedir}/log/pm-suspend.log
 
 

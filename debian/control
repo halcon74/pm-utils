@@ -2,7 +2,7 @@ Source: pm-utils
 Section: admin
 Priority: optional
 Maintainer: Alexey Mishustin <halcon@tuta.io>
-Build-Depends: debhelper (>= 11), xmlto
+Build-Depends: debhelper (>= 12), xmlto
 Standards-Version: 4.1.3
 Homepage: https://github.com/halcon74/pm-utils
 #Vcs-Browser: https://salsa.debian.org/debian/hello-world
