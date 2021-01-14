@@ -1,0 +1,460 @@
+[32;01m * [39;49;00mPackage:    sys-power/pm-utils-1.4.4
+[32;01m * [39;49;00mRepository: localrepo
+[32;01m * [39;49;00mMaintainer: halcon@tuta.io
+[32;01m * [39;49;00mUSE:        abi_x86_64 amd64 elibc_glibc kernel_linux logrotate userland_GNU
+[32;01m * [39;49;00mFEATURES:   network-sandbox preserve-libs sandbox userpriv usersandbox
+>>> Unpacking source...
+>>> Unpacking pm-utils-1.4.4.tar.gz to /var/tmp/portage/sys-power/pm-utils-1.4.4/work
+>>> Source unpacked in /var/tmp/portage/sys-power/pm-utils-1.4.4/work
+>>> Preparing source in /var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4 ...
+ [32;01m*[0m Running eautoreconf in '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4' ...
+ [32;01m*[0m Running aclocal ...
+[A[179C [34;01m[ [32;01mok[34;01m ][0m
+ [32;01m*[0m Running autoconf --force ...
+[A[179C [34;01m[ [32;01mok[34;01m ][0m
+ [32;01m*[0m Running autoheader ...
+[A[179C [34;01m[ [32;01mok[34;01m ][0m
+ [32;01m*[0m Running automake --add-missing --copy --foreign --force-missing ...
+[A[179C [34;01m[ [32;01mok[34;01m ][0m
+ * Running elibtoolize in: pm-utils-1.4.4/
+>>> Source prepared.
+>>> Configuring source in /var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4 ...
+ * econf: updating pm-utils-1.4.4/config.guess with /usr/share/gnuconfig/config.guess
+ * econf: updating pm-utils-1.4.4/config.sub with /usr/share/gnuconfig/config.sub
+./configure --prefix=/usr --build=x86_64-pc-linux-gnu --host=x86_64-pc-linux-gnu --mandir=/usr/share/man --infodir=/usr/share/info --datadir=/usr/share --sysconfdir=/etc --localstatedir=/var/lib --disable-dependency-tracking --disable-silent-rules --docdir=/usr/share/doc/pm-utils-1.4.4 --htmldir=/usr/share/doc/pm-utils-1.4.4/html --libdir=/usr/lib64
+checking for a BSD-compatible install... /usr/lib/portage/python3.8/ebuild-helpers/xattr/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking for x86_64-pc-linux-gnu-gcc... x86_64-pc-linux-gnu-gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether x86_64-pc-linux-gnu-gcc accepts -g... yes
+checking for x86_64-pc-linux-gnu-gcc option to accept ISO C89... none needed
+checking whether x86_64-pc-linux-gnu-gcc understands -c and -o together... yes
+checking whether make supports the include directive... yes (GNU style)
+checking dependency style of x86_64-pc-linux-gnu-gcc... none
+checking whether ln -s works... yes
+checking for xmlto... /usr/bin/xmlto
+checking whether to build manpages... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating pm-utils.pc
+config.status: creating man/Makefile
+config.status: creating pm/Makefile
+config.status: creating pm/sleep.d/Makefile
+config.status: creating pm/power.d/Makefile
+config.status: creating pm/module.d/Makefile
+config.status: creating src/Makefile
+config.status: creating video-quirks/Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+
+                    pm-utils 1.4.4
+                  ==================
+
+        prefix:                    /usr
+        compiler:                  x86_64-pc-linux-gnu-gcc
+        cflags:                    -O2 -march=native -pipe
+
+>>> Source configured.
+>>> Compiling source in /var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4 ...
+make -j15 
+make  all-recursive
+make[1]: Entering directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4'
+Making all in man
+make[2]: Entering directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/man'
+/usr/bin/xmlto man on_ac_power.xml
+/usr/bin/xmlto man pm-is-supported.xml
+/usr/bin/xmlto man pm-pmu.xml
+/usr/bin/xmlto man pm-powersave.xml
+/usr/bin/xmlto man pm-action.xml
+Note: meta source : no *info/productname or alternative            on_ac_power
+Note: meta source : see http://docbook.sf.net/el/productname       on_ac_power
+Note: meta source : no refentry/refmeta/refmiscinfo@class=source   on_ac_power
+Note: meta source : see http://docbook.sf.net/el/refmiscinfo       on_ac_power
+Note: meta version: no *info/productnumber or alternative          on_ac_power
+Note: meta version: see http://docbook.sf.net/el/productnumber     on_ac_power
+Note: meta version: no refentry/refmeta/refmiscinfo@class=version  on_ac_power
+Note: meta version: see http://docbook.sf.net/el/refmiscinfo       on_ac_power
+Warn: meta source : no fallback for source, so inserted a fixme    on_ac_power
+Note: meta manual : no titled ancestor of refentry                 on_ac_power
+Note: meta manual : no refentry/refmeta/refmiscinfo@class=manual   on_ac_power
+Note: meta manual : see http://docbook.sf.net/el/refmiscinfo       on_ac_power
+Warn: meta manual : no fallback for manual, so inserted a fixme    on_ac_power
+Warn: AUTHOR sect.: no personblurb|contrib for Richard Hughes      on_ac_power
+Note: AUTHOR sect.: see http://docbook.sf.net/el/contrib           on_ac_power
+Note: AUTHOR sect.: see http://docbook.sf.net/el/personblurb       on_ac_power
+Note: meta source : no *info/productname or alternative            pm-pmu
+Note: meta source : see http://docbook.sf.net/el/productname       pm-pmu
+Note: meta source : no refentry/refmeta/refmiscinfo@class=source   pm-pmu
+Note: meta source : see http://docbook.sf.net/el/refmiscinfo       pm-pmu
+Note: meta version: no *info/productnumber or alternative          pm-pmu
+Note: meta version: see http://docbook.sf.net/el/productnumber     pm-pmu
+Note: meta version: no refentry/refmeta/refmiscinfo@class=version  pm-pmu
+Note: meta version: see http://docbook.sf.net/el/refmiscinfo       pm-pmu
+Warn: meta source : no fallback for source, so inserted a fixme    pm-pmu
+Note: meta manual : no titled ancestor of refentry                 pm-pmu
+Note: meta manual : no refentry/refmeta/refmiscinfo@class=manual   pm-pmu
+Note: meta manual : see http://docbook.sf.net/el/refmiscinfo       pm-pmu
+Warn: meta manual : no fallback for manual, so inserted a fixme    pm-pmu
+Warn: AUTHOR sect.: no personblurb|contrib for Richard Hughes      pm-pmu
+Note: AUTHOR sect.: see http://docbook.sf.net/el/contrib           pm-pmu
+Note: AUTHOR sect.: see http://docbook.sf.net/el/personblurb       pm-pmu
+Note: Writing on_ac_power.1
+Note: Writing pm-powersave.8
+Note: Writing pm-is-supported.1
+Note: Writing pm-pmu.8
+Note: Writing pm-action.8
+make[2]: Leaving directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/man'
+Making all in pm
+make[2]: Entering directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/pm'
+Making all in sleep.d
+make[3]: Entering directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/pm/sleep.d'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/pm/sleep.d'
+Making all in power.d
+make[3]: Entering directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/pm/power.d'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/pm/power.d'
+Making all in module.d
+make[3]: Entering directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/pm/module.d'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/pm/module.d'
+make[3]: Entering directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/pm'
+sed -e 's,[@]PM-UTILS-LIBDIR[@],/usr/lib64/pm-utils,g' -e 's,[@]PM-UTILS-SYSCONFDIR[@],/etc/pm,g' functions.in >functions
+sed -e 's,[@]PM-UTILS-LIBDIR[@],/usr/lib64/pm-utils,g' -e 's,[@]PM-UTILS-SYSCONFDIR[@],/etc/pm,g' pm-functions.in >pm-functions
+chmod +x functions
+chmod +x pm-functions
+make[3]: Leaving directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/pm'
+make[2]: Leaving directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/pm'
+Making all in src
+make[2]: Entering directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/src'
+x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I..     -O2 -march=native -pipe -c -o pm-pmu.o pm-pmu.c
+x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I..     -O2 -march=native -pipe -c -o pm-reset-swap.o pm-reset-swap.c
+sed -e 's,[@]PM-UTILS-LIBDIR[@],/usr/lib64/pm-utils,g' -e 's,[@]PM-UTILS-SYSCONFDIR[@],/etc/pm,g' pm-is-supported.in >pm-is-supported
+sed -e 's,[@]PM-UTILS-LIBDIR[@],/usr/lib64/pm-utils,g' -e 's,[@]PM-UTILS-SYSCONFDIR[@],/etc/pm,g' pm-action.in >pm-action
+sed -e 's,[@]PM-UTILS-LIBDIR[@],/usr/lib64/pm-utils,g' -e 's,[@]PM-UTILS-SYSCONFDIR[@],/etc/pm,g' pm-powersave.in >pm-powersave
+chmod +x pm-is-supported
+chmod +x pm-action
+chmod +x pm-powersave
+x86_64-pc-linux-gnu-gcc  -O2 -march=native -pipe  -Wl,-O1 -Wl,--as-needed -o pm-pmu pm-pmu.o  
+x86_64-pc-linux-gnu-gcc  -O2 -march=native -pipe  -Wl,-O1 -Wl,--as-needed -o pm-reset-swap pm-reset-swap.o  
+make[2]: Leaving directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/src'
+Making all in video-quirks
+make[2]: Entering directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/video-quirks'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/video-quirks'
+make[2]: Entering directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4'
+make[2]: Leaving directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4'
+make[1]: Leaving directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4'
+>>> Source compiled.
+>>> Test phase [not enabled]: sys-power/pm-utils-1.4.4
+
+>>> Install sys-power/pm-utils-1.4.4 into /var/tmp/portage/sys-power/pm-utils-1.4.4/image
+make -j15 DESTDIR=/var/tmp/portage/sys-power/pm-utils-1.4.4/image install 
+Making install in man
+make[1]: Entering directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/man'
+make[2]: Entering directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/man'
+make[2]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/var/tmp/portage/sys-power/pm-utils-1.4.4/image/usr/share/man/man1'
+ /bin/mkdir -p '/var/tmp/portage/sys-power/pm-utils-1.4.4/image/usr/share/man/man8'
+ /usr/lib/portage/python3.8/ebuild-helpers/xattr/install -c -m 644 on_ac_power.1 pm-is-supported.1 '/var/tmp/portage/sys-power/pm-utils-1.4.4/image/usr/share/man/man1'
+ /usr/lib/portage/python3.8/ebuild-helpers/xattr/install -c -m 644 pm-pmu.8 pm-powersave.8 pm-action.8 '/var/tmp/portage/sys-power/pm-utils-1.4.4/image/usr/share/man/man8'
+make  install-data-hook
+make[3]: Entering directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/man'
+ /bin/mkdir -p '/var/tmp/portage/sys-power/pm-utils-1.4.4/image/usr/share/man/man1'
+ /bin/mkdir -p '/var/tmp/portage/sys-power/pm-utils-1.4.4/image/usr/share/man/man8'
+ /usr/lib/portage/python3.8/ebuild-helpers/xattr/install -c -m 644 pm-pmu.8 pm-powersave.8 pm-action.8 '/var/tmp/portage/sys-power/pm-utils-1.4.4/image/usr/share/man/man8'
+ /usr/lib/portage/python3.8/ebuild-helpers/xattr/install -c -m 644 on_ac_power.1 pm-is-supported.1 '/var/tmp/portage/sys-power/pm-utils-1.4.4/image/usr/share/man/man1'
+ln -s pm-action.8 /var/tmp/portage/sys-power/pm-utils-1.4.4/image/usr/share/man/man8/pm-suspend.8
+ln -s pm-action.8 /var/tmp/portage/sys-power/pm-utils-1.4.4/image/usr/share/man/man8/pm-hibernate.8
+ln -s pm-action.8 /var/tmp/portage/sys-power/pm-utils-1.4.4/image/usr/share/man/man8/pm-suspend-hybrid.8
+make[3]: Leaving directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/man'
+make[2]: Leaving directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/man'
+make[1]: Leaving directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/man'
+Making install in pm
+make[1]: Entering directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/pm'
+Making install in sleep.d
+make[2]: Entering directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/pm/sleep.d'
+make[3]: Entering directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/pm/sleep.d'
+mkdir -p /var/tmp/portage/sys-power/pm-utils-1.4.4/image/etc/pm/sleep.d
+ /bin/mkdir -p '/var/tmp/portage/sys-power/pm-utils-1.4.4/image/usr/lib64/pm-utils/sleep.d'
+ /usr/lib/portage/python3.8/ebuild-helpers/xattr/install -c 00logging 00powersave 01grub 50unload_alx 75modules 90clock 94cpufreq 95led 98video-quirk-db-handler 99video '/var/tmp/portage/sys-power/pm-utils-1.4.4/image/usr/lib64/pm-utils/sleep.d'
+make[3]: Leaving directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/pm/sleep.d'
+make[2]: Leaving directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/pm/sleep.d'
+Making install in power.d
+make[2]: Entering directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/pm/power.d'
+make[3]: Entering directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/pm/power.d'
+mkdir -p /var/tmp/portage/sys-power/pm-utils-1.4.4/image/etc/pm/power.d
+ /bin/mkdir -p '/var/tmp/portage/sys-power/pm-utils-1.4.4/image/usr/lib64/pm-utils/power.d'
+ /usr/lib/portage/python3.8/ebuild-helpers/xattr/install -c disable_wol harddrive intel-audio-powersave laptop-mode pci_devices pcie_aspm sata_alpm sched-powersave usb_bluetooth wireless xfs_buffer '/var/tmp/portage/sys-power/pm-utils-1.4.4/image/usr/lib64/pm-utils/power.d'
+make[3]: Leaving directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/pm/power.d'
+make[2]: Leaving directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/pm/power.d'
+Making install in module.d
+make[2]: Entering directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/pm/module.d'
+make[3]: Entering directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/pm/module.d'
+make[3]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/var/tmp/portage/sys-power/pm-utils-1.4.4/image/usr/lib64/pm-utils/module.d'
+ /usr/lib/portage/python3.8/ebuild-helpers/xattr/install -c kernel tuxonice uswsusp '/var/tmp/portage/sys-power/pm-utils-1.4.4/image/usr/lib64/pm-utils/module.d'
+make[3]: Leaving directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/pm/module.d'
+make[2]: Leaving directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/pm/module.d'
+make[2]: Entering directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/pm'
+make[3]: Entering directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/pm'
+mkdir /var/tmp/portage/sys-power/pm-utils-1.4.4/image/etc/pm/config.d
+ /bin/mkdir -p '/var/tmp/portage/sys-power/pm-utils-1.4.4/image/usr/share/doc/pm-utils-1.4.4'
+ /bin/mkdir -p '/var/tmp/portage/sys-power/pm-utils-1.4.4/image/usr/lib64/pm-utils'
+ /bin/mkdir -p '/var/tmp/portage/sys-power/pm-utils-1.4.4/image/usr/lib64/pm-utils'
+ /usr/lib/portage/python3.8/ebuild-helpers/xattr/install -c -m 644 HOWTO.hooks HOWTO.modules '/var/tmp/portage/sys-power/pm-utils-1.4.4/image/usr/share/doc/pm-utils-1.4.4'
+ /usr/lib/portage/python3.8/ebuild-helpers/xattr/install -c -m 644 defaults '/var/tmp/portage/sys-power/pm-utils-1.4.4/image/usr/lib64/pm-utils'
+ /usr/lib/portage/python3.8/ebuild-helpers/xattr/install -c functions pm-functions '/var/tmp/portage/sys-power/pm-utils-1.4.4/image/usr/lib64/pm-utils'
+make[3]: Leaving directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/pm'
+make[2]: Leaving directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/pm'
+make[1]: Leaving directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/pm'
+Making install in src
+make[1]: Entering directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/src'
+make[2]: Entering directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/src'
+ /bin/mkdir -p '/var/tmp/portage/sys-power/pm-utils-1.4.4/image/usr/bin'
+ /bin/mkdir -p '/var/tmp/portage/sys-power/pm-utils-1.4.4/image/usr/bin'
+ /bin/mkdir -p '/var/tmp/portage/sys-power/pm-utils-1.4.4/image/usr/sbin'
+ /bin/mkdir -p '/var/tmp/portage/sys-power/pm-utils-1.4.4/image/usr/lib64/pm-utils/bin'
+ /bin/mkdir -p '/var/tmp/portage/sys-power/pm-utils-1.4.4/image/usr/lib64/pm-utils/bin'
+ /usr/lib/portage/python3.8/ebuild-helpers/xattr/install -c pm-is-supported '/var/tmp/portage/sys-power/pm-utils-1.4.4/image/usr/bin'
+ /usr/lib/portage/python3.8/ebuild-helpers/xattr/install -c pm-powersave '/var/tmp/portage/sys-power/pm-utils-1.4.4/image/usr/sbin'
+ /usr/lib/portage/python3.8/ebuild-helpers/xattr/install -c on_ac_power '/var/tmp/portage/sys-power/pm-utils-1.4.4/image/usr/bin'
+ /usr/lib/portage/python3.8/ebuild-helpers/xattr/install -c pm-action service '/var/tmp/portage/sys-power/pm-utils-1.4.4/image/usr/lib64/pm-utils/bin'
+  /usr/lib/portage/python3.8/ebuild-helpers/xattr/install -c pm-pmu pm-reset-swap '/var/tmp/portage/sys-power/pm-utils-1.4.4/image/usr/lib64/pm-utils/bin'
+make  install-data-hook
+make[3]: Entering directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/src'
+mkdir -p /var/tmp/portage/sys-power/pm-utils-1.4.4/image/usr/sbin
+ln -s /usr/lib64/pm-utils/bin/pm-action /var/tmp/portage/sys-power/pm-utils-1.4.4/image/usr/sbin/pm-suspend
+ln -s /usr/lib64/pm-utils/bin/pm-action /var/tmp/portage/sys-power/pm-utils-1.4.4/image/usr/sbin/pm-hibernate
+ln -s /usr/lib64/pm-utils/bin/pm-action /var/tmp/portage/sys-power/pm-utils-1.4.4/image/usr/sbin/pm-suspend-hybrid
+make[3]: Leaving directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/src'
+make[2]: Leaving directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/src'
+make[1]: Leaving directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/src'
+Making install in video-quirks
+make[1]: Entering directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/video-quirks'
+make[2]: Entering directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/video-quirks'
+mkdir -p /var/tmp/portage/sys-power/pm-utils-1.4.4/image/etc/video-quirks
+ /bin/mkdir -p '/var/tmp/portage/sys-power/pm-utils-1.4.4/image/usr/lib64/pm-utils/video-quirks'
+ /usr/lib/portage/python3.8/ebuild-helpers/xattr/install -c 20-video-quirk-pm-acer.quirkdb 20-video-quirk-pm-dell.quirkdb 20-video-quirk-pm-ibm.quirkdb 20-video-quirk-pm-samsung.quirkdb 20-video-quirk-pm-apple.quirkdb 20-video-quirk-pm-fujitsu.quirkdb 20-video-quirk-pm-lenovo.quirkdb 20-video-quirk-pm-sony.quirkdb 20-video-quirk-pm-asus.quirkdb 20-video-quirk-pm-hp.quirkdb 20-video-quirk-pm-misc.quirkdb 20-video-quirk-pm-toshiba.quirkdb '/var/tmp/portage/sys-power/pm-utils-1.4.4/image/usr/lib64/pm-utils/video-quirks'
+make[2]: Leaving directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/video-quirks'
+make[1]: Leaving directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4/video-quirks'
+make[1]: Entering directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4'
+make[2]: Entering directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4'
+make[2]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/var/tmp/portage/sys-power/pm-utils-1.4.4/image/usr/share/doc/pm-utils-1.4.4'
+ /bin/mkdir -p '/var/tmp/portage/sys-power/pm-utils-1.4.4/image/usr/lib64/pkgconfig'
+ /usr/lib/portage/python3.8/ebuild-helpers/xattr/install -c -m 644 README README.debugging README.distributions '/var/tmp/portage/sys-power/pm-utils-1.4.4/image/usr/share/doc/pm-utils-1.4.4'
+ /usr/lib/portage/python3.8/ebuild-helpers/xattr/install -c -m 644 pm-utils.pc '/var/tmp/portage/sys-power/pm-utils-1.4.4/image/usr/lib64/pkgconfig'
+make[2]: Leaving directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4'
+make[1]: Leaving directory '/var/tmp/portage/sys-power/pm-utils-1.4.4/work/pm-utils-1.4.4'
+>>> Completed installing sys-power/pm-utils-1.4.4 into /var/tmp/portage/sys-power/pm-utils-1.4.4/image
+
+ [32;01m*[0m Final size of build directory: 2036 KiB (1.9 MiB)
+ [32;01m*[0m Final size of installed tree:   456 KiB
+
+strip: x86_64-pc-linux-gnu-strip --strip-unneeded -N __gentoo_check_ldflags__ -R .comment -R .GCC.command.line -R .note.gnu.gold-version
+   /usr/lib64/pm-utils/bin/pm-pmu
+   /usr/lib64/pm-utils/bin/pm-reset-swap
+ [32;01m*[39;49;00m checking 69 files for package collisions
+>>> Merging sys-power/pm-utils-1.4.4 to /
+--- /usr/
+--- /usr/sbin/
+>>> /usr/sbin/pm-suspend-hybrid -> /usr/lib64/pm-utils/bin/pm-action
+>>> /usr/sbin/pm-suspend -> /usr/lib64/pm-utils/bin/pm-action
+>>> /usr/sbin/pm-powersave
+>>> /usr/sbin/pm-hibernate -> /usr/lib64/pm-utils/bin/pm-action
+--- /usr/lib64/
+--- /usr/lib64/pkgconfig/
+>>> /usr/lib64/pkgconfig/pm-utils.pc
+--- /usr/lib64/pm-utils/
+--- /usr/lib64/pm-utils/sleep.d/
+>>> /usr/lib64/pm-utils/sleep.d/98video-quirk-db-handler
+>>> /usr/lib64/pm-utils/sleep.d/01grub
+>>> /usr/lib64/pm-utils/sleep.d/00powersave
+>>> /usr/lib64/pm-utils/sleep.d/94cpufreq
+>>> /usr/lib64/pm-utils/sleep.d/95led
+>>> /usr/lib64/pm-utils/sleep.d/50unload_alx
+>>> /usr/lib64/pm-utils/sleep.d/99video
+>>> /usr/lib64/pm-utils/sleep.d/75modules
+>>> /usr/lib64/pm-utils/sleep.d/00logging
+>>> /usr/lib64/pm-utils/sleep.d/90clock
+>>> /usr/lib64/pm-utils/pm-functions
+--- /usr/lib64/pm-utils/video-quirks/
+>>> /usr/lib64/pm-utils/video-quirks/20-video-quirk-pm-lenovo.quirkdb
+>>> /usr/lib64/pm-utils/video-quirks/20-video-quirk-pm-fujitsu.quirkdb
+>>> /usr/lib64/pm-utils/video-quirks/20-video-quirk-pm-misc.quirkdb
+>>> /usr/lib64/pm-utils/video-quirks/20-video-quirk-pm-samsung.quirkdb
+>>> /usr/lib64/pm-utils/video-quirks/20-video-quirk-pm-sony.quirkdb
+>>> /usr/lib64/pm-utils/video-quirks/20-video-quirk-pm-acer.quirkdb
+>>> /usr/lib64/pm-utils/video-quirks/20-video-quirk-pm-dell.quirkdb
+>>> /usr/lib64/pm-utils/video-quirks/20-video-quirk-pm-asus.quirkdb
+>>> /usr/lib64/pm-utils/video-quirks/20-video-quirk-pm-apple.quirkdb
+>>> /usr/lib64/pm-utils/video-quirks/20-video-quirk-pm-ibm.quirkdb
+>>> /usr/lib64/pm-utils/video-quirks/20-video-quirk-pm-toshiba.quirkdb
+>>> /usr/lib64/pm-utils/video-quirks/20-video-quirk-pm-hp.quirkdb
+>>> /usr/lib64/pm-utils/functions
+--- /usr/lib64/pm-utils/bin/
+>>> /usr/lib64/pm-utils/bin/pm-reset-swap
+>>> /usr/lib64/pm-utils/bin/service
+>>> /usr/lib64/pm-utils/bin/pm-action
+>>> /usr/lib64/pm-utils/bin/pm-pmu
+--- /usr/lib64/pm-utils/power.d/
+>>> /usr/lib64/pm-utils/power.d/sata_alpm
+>>> /usr/lib64/pm-utils/power.d/disable_wol
+>>> /usr/lib64/pm-utils/power.d/laptop-mode
+>>> /usr/lib64/pm-utils/power.d/wireless
+>>> /usr/lib64/pm-utils/power.d/pcie_aspm
+>>> /usr/lib64/pm-utils/power.d/intel-audio-powersave
+>>> /usr/lib64/pm-utils/power.d/sched-powersave
+>>> /usr/lib64/pm-utils/power.d/xfs_buffer
+>>> /usr/lib64/pm-utils/power.d/usb_bluetooth
+>>> /usr/lib64/pm-utils/power.d/pci_devices
+>>> /usr/lib64/pm-utils/defaults
+--- /usr/lib64/pm-utils/module.d/
+>>> /usr/lib64/pm-utils/module.d/kernel
+>>> /usr/lib64/pm-utils/module.d/tuxonice
+>>> /usr/lib64/pm-utils/module.d/uswsusp
+--- /usr/bin/
+>>> /usr/bin/on_ac_power
+>>> /usr/bin/pm-is-supported
+--- /usr/share/
+--- /usr/share/man/
+--- /usr/share/man/man1/
+>>> /usr/share/man/man1/on_ac_power.1.bz2
+>>> /usr/share/man/man1/pm-is-supported.1.bz2
+--- /usr/share/man/man8/
+>>> /usr/share/man/man8/pm-pmu.8.bz2
+>>> /usr/share/man/man8/pm-suspend-hybrid.8.bz2 -> pm-action.8.bz2
+>>> /usr/share/man/man8/pm-hibernate.8.bz2 -> pm-action.8.bz2
+>>> /usr/share/man/man8/pm-action.8.bz2
+>>> /usr/share/man/man8/pm-suspend.8.bz2 -> pm-action.8.bz2
+>>> /usr/share/man/man8/pm-powersave.8.bz2
+--- /usr/share/doc/
+--- /usr/share/doc/pm-utils-1.4.4/
+>>> /usr/share/doc/pm-utils-1.4.4/AUTHORS.bz2
+>>> /usr/share/doc/pm-utils-1.4.4/README.distributions.bz2
+>>> /usr/share/doc/pm-utils-1.4.4/README.bz2
+>>> /usr/share/doc/pm-utils-1.4.4/TODO.bz2
+>>> /usr/share/doc/pm-utils-1.4.4/HOWTO.hooks.bz2
+>>> /usr/share/doc/pm-utils-1.4.4/ChangeLog
+>>> /usr/share/doc/pm-utils-1.4.4/README.native-quirk-db.bz2
+>>> /usr/share/doc/pm-utils-1.4.4/NEWS.bz2
+>>> /usr/share/doc/pm-utils-1.4.4/HOWTO.modules.bz2
+>>> /usr/share/doc/pm-utils-1.4.4/README.debugging.bz2
+--- /etc/
+--- /etc/logrotate.d/
+>>> /etc/logrotate.d/pm-utils
+--- /etc/pm/
+--- /etc/pm/sleep.d/
+--- /etc/pm/config.d/
+>>> /etc/pm/config.d/gentoo
+--- /etc/pm/power.d/
+>>> Safely unmerging already-installed instance...
+No package files given... Grabbing a set.
+--- replaced sym /usr/share/man/man8/pm-suspend.8.bz2
+--- replaced sym /usr/share/man/man8/pm-suspend-hybrid.8.bz2
+--- replaced obj /usr/share/man/man8/pm-powersave.8.bz2
+--- replaced obj /usr/share/man/man8/pm-pmu.8.bz2
+--- replaced sym /usr/share/man/man8/pm-hibernate.8.bz2
+--- replaced obj /usr/share/man/man8/pm-action.8.bz2
+--- replaced dir /usr/share/man/man8
+--- replaced obj /usr/share/man/man1/pm-is-supported.1.bz2
+--- replaced obj /usr/share/man/man1/on_ac_power.1.bz2
+--- replaced dir /usr/share/man/man1
+--- replaced dir /usr/share/man
+--- replaced obj /usr/share/doc/pm-utils-1.4.4/TODO.bz2
+--- replaced obj /usr/share/doc/pm-utils-1.4.4/README.native-quirk-db.bz2
+--- replaced obj /usr/share/doc/pm-utils-1.4.4/README.distributions.bz2
+--- replaced obj /usr/share/doc/pm-utils-1.4.4/README.debugging.bz2
+--- replaced obj /usr/share/doc/pm-utils-1.4.4/README.bz2
+--- replaced obj /usr/share/doc/pm-utils-1.4.4/NEWS.bz2
+--- replaced obj /usr/share/doc/pm-utils-1.4.4/HOWTO.modules.bz2
+--- replaced obj /usr/share/doc/pm-utils-1.4.4/HOWTO.hooks.bz2
+--- replaced obj /usr/share/doc/pm-utils-1.4.4/ChangeLog
+--- replaced obj /usr/share/doc/pm-utils-1.4.4/AUTHORS.bz2
+--- replaced dir /usr/share/doc/pm-utils-1.4.4
+--- replaced dir /usr/share/doc
+--- replaced dir /usr/share
+--- replaced sym /usr/sbin/pm-suspend-hybrid
+--- replaced sym /usr/sbin/pm-suspend
+--- replaced obj /usr/sbin/pm-powersave
+--- replaced sym /usr/sbin/pm-hibernate
+--- replaced dir /usr/sbin
+--- replaced obj /usr/lib64/pm-utils/video-quirks/20-video-quirk-pm-toshiba.quirkdb
+--- replaced obj /usr/lib64/pm-utils/video-quirks/20-video-quirk-pm-sony.quirkdb
+--- replaced obj /usr/lib64/pm-utils/video-quirks/20-video-quirk-pm-samsung.quirkdb
+--- replaced obj /usr/lib64/pm-utils/video-quirks/20-video-quirk-pm-misc.quirkdb
+--- replaced obj /usr/lib64/pm-utils/video-quirks/20-video-quirk-pm-lenovo.quirkdb
+--- replaced obj /usr/lib64/pm-utils/video-quirks/20-video-quirk-pm-ibm.quirkdb
+--- replaced obj /usr/lib64/pm-utils/video-quirks/20-video-quirk-pm-hp.quirkdb
+--- replaced obj /usr/lib64/pm-utils/video-quirks/20-video-quirk-pm-fujitsu.quirkdb
+--- replaced obj /usr/lib64/pm-utils/video-quirks/20-video-quirk-pm-dell.quirkdb
+--- replaced obj /usr/lib64/pm-utils/video-quirks/20-video-quirk-pm-asus.quirkdb
+--- replaced obj /usr/lib64/pm-utils/video-quirks/20-video-quirk-pm-apple.quirkdb
+--- replaced obj /usr/lib64/pm-utils/video-quirks/20-video-quirk-pm-acer.quirkdb
+--- replaced dir /usr/lib64/pm-utils/video-quirks
+--- replaced obj /usr/lib64/pm-utils/sleep.d/99video
+--- replaced obj /usr/lib64/pm-utils/sleep.d/98video-quirk-db-handler
+--- replaced obj /usr/lib64/pm-utils/sleep.d/95led
+--- replaced obj /usr/lib64/pm-utils/sleep.d/94cpufreq
+--- replaced obj /usr/lib64/pm-utils/sleep.d/90clock
+--- replaced obj /usr/lib64/pm-utils/sleep.d/75modules
+--- replaced obj /usr/lib64/pm-utils/sleep.d/50unload_alx
+--- replaced obj /usr/lib64/pm-utils/sleep.d/01grub
+--- replaced obj /usr/lib64/pm-utils/sleep.d/00powersave
+--- replaced obj /usr/lib64/pm-utils/sleep.d/00logging
+--- replaced dir /usr/lib64/pm-utils/sleep.d
+--- replaced obj /usr/lib64/pm-utils/power.d/xfs_buffer
+--- replaced obj /usr/lib64/pm-utils/power.d/wireless
+--- replaced obj /usr/lib64/pm-utils/power.d/usb_bluetooth
+--- replaced obj /usr/lib64/pm-utils/power.d/sched-powersave
+--- replaced obj /usr/lib64/pm-utils/power.d/sata_alpm
+--- replaced obj /usr/lib64/pm-utils/power.d/pcie_aspm
+--- replaced obj /usr/lib64/pm-utils/power.d/pci_devices
+--- replaced obj /usr/lib64/pm-utils/power.d/laptop-mode
+--- replaced obj /usr/lib64/pm-utils/power.d/intel-audio-powersave
+--- replaced obj /usr/lib64/pm-utils/power.d/disable_wol
+--- replaced dir /usr/lib64/pm-utils/power.d
+--- replaced obj /usr/lib64/pm-utils/pm-functions
+--- replaced obj /usr/lib64/pm-utils/module.d/uswsusp
+--- replaced obj /usr/lib64/pm-utils/module.d/tuxonice
+--- replaced obj /usr/lib64/pm-utils/module.d/kernel
+--- replaced dir /usr/lib64/pm-utils/module.d
+--- replaced obj /usr/lib64/pm-utils/functions
+--- replaced obj /usr/lib64/pm-utils/defaults
+--- replaced obj /usr/lib64/pm-utils/bin/service
+--- replaced obj /usr/lib64/pm-utils/bin/pm-reset-swap
+--- replaced obj /usr/lib64/pm-utils/bin/pm-pmu
+--- replaced obj /usr/lib64/pm-utils/bin/pm-action
+--- replaced dir /usr/lib64/pm-utils/bin
+--- replaced dir /usr/lib64/pm-utils
+--- replaced obj /usr/lib64/pkgconfig/pm-utils.pc
+--- replaced dir /usr/lib64/pkgconfig
+--- replaced dir /usr/lib64
+--- replaced obj /usr/bin/pm-is-supported
+--- replaced obj /usr/bin/on_ac_power
+--- replaced dir /usr/bin
+--- replaced dir /usr
+--- replaced dir /etc/pm/sleep.d
+--- replaced dir /etc/pm/power.d
+--- replaced obj /etc/pm/config.d/gentoo
+--- replaced dir /etc/pm/config.d
+--- replaced dir /etc/pm
+--- replaced obj /etc/logrotate.d/pm-utils
+--- replaced dir /etc/logrotate.d
+--- replaced dir /etc
+<<<          dir /etc/video-quirks
+>>> Regenerating /etc/ld.so.cache...
+>>> Original instance of package unmerged safely.
+
+>>> sys-power/pm-utils-1.4.4 merged.
