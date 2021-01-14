@@ -2,15 +2,17 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
-inherit autotools eutils
+inherit autotools eutils git-r3
 
 DESCRIPTION="Suspend and hibernation utilities"
 HOMEPAGE="https://pm-utils.freedesktop.org/"
-SRC_URI="https://github.com/halcon74/pm-utils/archive/${P}.tar.gz"
+
+EGIT_REPO_URI="https://github.com/halcon74/pm-utils.git"
+EGIT_BRANCH="pm-utils-1.4"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sparc ~x86"
+KEYWORDS=""
 IUSE="debug +logrotate video_cards_intel video_cards_radeon"
 
 RESTRICT="mirror"
@@ -28,11 +30,6 @@ RDEPEND="!<app-laptop/laptop-mode-tools-1.55-r1
 DEPEND="${RDEPEND}"
 
 DOCS="AUTHORS ChangeLog NEWS pm/HOWTO* README* TODO"
-
-src_unpack() {
-	default
-	mv ${WORKDIR}/pm-utils-${P} ${WORKDIR}/${P} 
-}
 
 src_prepare() {
 	default
@@ -67,6 +64,8 @@ src_install() {
 		insinto /etc/logrotate.d
 		doins debian/${PN} #408091
 	fi
+
+	rm -rf "${ED}"/etc/video-quirks
 
 	# Remove hooks which are not stable enough yet (rm -f from debian/rules)
 	rm -f "${ED}"/usr/$(get_libdir)/${PN}/power.d/harddrive
